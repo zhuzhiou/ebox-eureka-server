@@ -1,11 +1,20 @@
 spring:
   application:
     name: eureka-server
+  cloud:
+    inetutils:
+      ignored-interfaces:
+        - Microsoft.*
+        - Software.*
+        - VMware.*
 server:
   port: 8761
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     fetch-registry: false
     register-with-eureka: false
   server:
     enable-self-preservation: false
+    eviction-interval-timer-in-ms: 30000
