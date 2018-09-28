@@ -1,20 +1,20 @@
 spring:
   application:
     name: eureka-server
-  cloud:
-    inetutils:
-      ignored-interfaces:
-        - Microsoft.*
-        - Software.*
-        - VMware.*
 server:
   port: 8761
 eureka:
   instance:
     prefer-ip-address: true
+    ip-address: 172.16.28.129
+# 如果是单机运行，需要确保eureka.instance.ip-address、eureka.instance.hostname的值，
+# 与eureka.client.service-url.defaultZone里的主机一致，才不会误判为Replicas
   client:
+    service-url:
+      defaultZone: http://eureka:eureka@${eureka.instance.ip-address}:8761/eureka/
     fetch-registry: false
     register-with-eureka: false
-  server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 30000
+security:
+  user:
+    name: eureka
+    password: eureka
