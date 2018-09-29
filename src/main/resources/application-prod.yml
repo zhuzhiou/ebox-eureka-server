@@ -12,3 +12,5 @@ security:
     password: ${security.user.password}
 server:
   port: 8761
+logging:
+  file: /var/log/ebox/${spring.application.name}.log
