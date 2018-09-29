@@ -53,8 +53,7 @@
         <profile>
             <id>local</id>
             <properties>
-                <eureka.instance.ip-address>127.0.0.1</eureka.instance.ip-address>
-                <security.user.password>local</security.user.password>
+                <spring.profiles.active>local</spring.profiles.active>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -63,6 +62,7 @@
         <profile>
             <id>prod</id>
             <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
                 <eureka.instance.ip-address>192.168.0.86</eureka.instance.ip-address>
                 <security.user.password>${env.SECURITY_USER_PASSWORD}</security.user.password>
             </properties>

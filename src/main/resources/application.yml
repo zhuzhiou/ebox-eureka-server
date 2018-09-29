@@ -1,17 +1,5 @@
 spring:
   application:
     name: eureka-server
-server:
-  port: 8761
-eureka:
-  instance:
-    prefer-ip-address: true
-    ip-address: ${eureka.instance.ip-address}
-  client:
-    service-url:
-      defaultZone: http://user:${security.user.password}@${eureka.instance.ip-address}:8761/eureka/
-    fetch-registry: false
-    register-with-eureka: false
-security:
-  user:
-    password: ${security.user.password}
+  profiles:
+    active: ${spring.profiles.active}
