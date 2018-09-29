@@ -6,13 +6,12 @@ server:
 eureka:
   instance:
     prefer-ip-address: true
-    ip-address: 127.0.0.1
+    ip-address: ${eureka.instance.ip-address}
   client:
     service-url:
-      defaultZone: http://${eureka.instance.ip-address}:8761/eureka/
+      defaultZone: http://user:${security.user.password}@${eureka.instance.ip-address}:8761/eureka/
     fetch-registry: false
     register-with-eureka: false
 security:
   user:
-    name: ${HTTP_BASIC_AUTH_USERNAME:ebox}
-    password: ${HTTP_BASIC_AUTH_PASSWORD:ebox}
+    password: ${security.user.password}

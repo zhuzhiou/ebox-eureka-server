@@ -41,3 +41,11 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
 ```
+
+## 打包生产环境
+
+使用了maven的profie，默认激活了本地开发环境，如果打包部署到生产环境，需要指定profile并且提供-Dsecurity.user.password参数
+
+```
+# mvn clean package dockerfile:build -Pprod -Dsecurity.user.password=123456
+```
