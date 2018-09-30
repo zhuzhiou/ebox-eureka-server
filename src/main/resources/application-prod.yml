@@ -4,13 +4,10 @@ eureka:
     ip-address: ${eureka.instance.ip-address}
   client:
     service-url:
-      defaultZone: http://user:${security.user.password}@${eureka.instance.ip-address}:8761/eureka/
+      defaultZone: http://${eureka.instance.ip-address}:8761/eureka/
     fetch-registry: false
     register-with-eureka: false
-security:
-  user:
-    password: ${security.user.password}
 server:
   port: 8761
 logging:
-  file: /var/log/ebox/${spring.application.name}.log
+  file: /var/log/${spring.application.name}/info.log
