@@ -1,12 +1,11 @@
 eureka:
-  instance:
-    prefer-ip-address: true
-    ip-address: ${eureka.instance.ip-address}
   client:
-    service-url:
-      defaultZone: http://${eureka.instance.ip-address}:8761/eureka/
+    use-dns-for-fetching-service-urls: true
+    region: cn-guangzhou
+    eureka-server-d-n-s-name: ilockers.cn
+    eureka-server-port: ${server.port}
+    eureka-server-u-r-l-context: eureka
     fetch-registry: false
-    register-with-eureka: false
 server:
   port: 8761
 logging:
