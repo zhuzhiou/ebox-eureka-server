@@ -2,7 +2,7 @@ eureka:
   client:
     use-dns-for-fetching-service-urls: true
     region: cn-guangzhou
-    eureka-server-d-n-s-name: ilockers.cn
+    eureka-server-d-n-s-name: ebox
     eureka-server-port: ${server.port}
     eureka-server-u-r-l-context: eureka
     fetch-registry: false
