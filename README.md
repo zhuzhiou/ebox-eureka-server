@@ -29,7 +29,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/ebox/eureka-server:latest
 ## 运行应用程序
 
 ```
-docker run -it --name eureka1 --hostname eureka1.cn-guangzhou-1.ebox --dns 192.168.0.86  -p 8761:8761 registry.cn-shenzhen.aliyuncs.com/ebox/eureka-server:latest
+docker run -it --rm --name eureka-server --hostname eureka1.cn-guangzhou-1.ebox --dns 192.168.0.86  -p 8761:8761 registry.cn-shenzhen.aliyuncs.com/ebox/eureka-server:latest
 ```
 
 ## 知识点
